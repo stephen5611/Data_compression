@@ -26,7 +26,7 @@ size_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size);
  *  and then delete the Repeated bytes*/
 void Data_Compress_Modify_Array(uint8_t *data_ptr, size_t repeated_count,size_t data_size);
 
-void Print_Modified_Array(uint8_t *data_ptr, size_t data_size);
+
 
 
 #endif /* DATA_COMPRESS_PRIVATE_H_ */

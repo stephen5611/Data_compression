@@ -48,7 +48,7 @@ void Data_Compress_Modify_Array(uint8_t *data_ptr, size_t repeated_count,size_t 
 	size_t index = 0;
 
 	/*Set the MSB of the byte to indicate duplicate entries*/
-	//data_ptr[0] = data_ptr[1] | 0x80;
+	data_ptr[0] = data_ptr[1] | 0x80;
 
 	/*insert the count of the repeated bytes to the immediate next location*/
 	data_ptr[1] = repeated_count;
@@ -61,14 +61,5 @@ void Data_Compress_Modify_Array(uint8_t *data_ptr, size_t repeated_count,size_t 
 }
 
 
-void Print_Modified_Array(uint8_t *data_ptr, size_t data_size)
-{
-	size_t index = 0;
-
-	for(index = 0; index < data_size;index++)
-	{
-		printf("%x ",data_ptr[index]);
-	}
-}
 
 

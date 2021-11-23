@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stddef.h>
-#define INPUT 2
+#define INPUT 1
 #include "Data_Compress_Interface.h"
 
 int main(void)
@@ -35,5 +35,7 @@ int main(void)
 	new_size = byte_compress(data_ptr,len);
 
 	//printf("new size:: %lu data:%d",new_size,data_ptr[0]);
+
+	byte_decompress(data_ptr,new_size);
 	return EXIT_SUCCESS;
 }

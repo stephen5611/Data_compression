@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "Data_Compress_Interface.h"
 #include "Data_Compress_Private.h"
-
+#include "Common.h"
 
 size_t byte_compress(uint8_t *data_ptr, size_t data_size)
 {
