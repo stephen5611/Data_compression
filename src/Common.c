@@ -2,11 +2,8 @@
  * Common.c
  *
  *  Created on: Nov 23, 2021
- *      Author: ubuntu
+ *      Author: Stephen
  */
-#include <stdint.h>
-#include <stdio.h>
-#include <stddef.h>
 
 #include "Common.h"
 

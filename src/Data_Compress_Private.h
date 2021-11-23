@@ -1,8 +1,8 @@
 /*
  * Data_Compress_Private.h
  *
- *  Created on: Nov 22, 2021
- *      Author: ubuntu
+ *  Created on: Nov 23, 2021
+ *      Author: Stephen
  */
 
 #ifndef DATA_COMPRESS_PRIVATE_H_
@@ -11,7 +11,8 @@
 #include <stdint.h>
 #include <stddef.h>
 
-/*Edge case checks */
+/*Negative case checks */
+
 
 /*check if the Address of Array is not NULL*/
 
@@ -20,7 +21,7 @@
 /*Check if the data size is 1 or 2*/
 
 /* Return Number of continuous repeated Bytes*/
-size_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size);
+uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size);
 
 /*Insert the Count for the repeated bytes in the next immediate location of the repeating byte
  *  and then delete the Repeated bytes*/

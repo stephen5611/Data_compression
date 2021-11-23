@@ -1,15 +1,14 @@
 /*
- * Data_Decompress_Engine.c
- *
- *  Created on: Nov 23, 2021
- *      Author: ubuntu
+ ============================================================================
+ Name        : Data_Decompress_Engine.c
+ Author      : Stephen
+ Email		 : stephen5611@gmail.com
+ Version     : 1.0
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
-#include <stdio.h>
-#include <stdint.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include "Common.h"
 
+#include "Common.h"
 #include "Data_Compress_Interface.h"
 #include "Data_Decompress_Private.h"
 

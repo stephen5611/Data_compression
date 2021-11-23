@@ -1,8 +1,8 @@
 /*
  * Data_Compress_Private.c
  *
- *  Created on: Nov 22, 2021
- *      Author: ubuntu
+ *  Created on: Nov 23, 2021
+ *      Author: Stephen
  */
 #include <stdio.h>
 #include <stdint.h>
@@ -11,10 +11,10 @@
 
 
 
-size_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
+uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
 {
 	size_t index = 0;
-	size_t repeated_bytes = 0;
+	uint8_t repeated_bytes = 0;
 
 	/*Continue only if data_size is more than 1*/
 	if(1 != data_size)
@@ -26,6 +26,12 @@ size_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
 			{
 				/*increment the number of repeated bytes*/
 				repeated_bytes = repeated_bytes + 1;
+
+				/*edge case scenario: repetitive byte count is > 255*/
+				if(255 <= repeated_bytes)
+				{
+					break;
+				}
 			}
 			else
 			{
@@ -59,7 +65,3 @@ void Data_Compress_Modify_Array(uint8_t *data_ptr, size_t repeated_count,size_t 
 		data_ptr[index] = data_ptr[index + (repeated_count - 1)];
 	}
 }
-
-
-
-

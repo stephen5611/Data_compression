@@ -1,41 +1,19 @@
 /*
  ============================================================================
- Name        : test1.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
+ Name        : main.c
+ Author      : Stephen
+ Email		 : stephen5611@gmail.com
+ Version     : 1.0
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <stddef.h>
-#define INPUT 1
-#include "Data_Compress_Interface.h"
+#include"test.h"
 
 int main(void)
 {
-	size_t new_size = 0;
-	size_t len = new_size;
-#if INPUT == 1
-	uint8_t data_ptr[] = { 0x03, 0x74, 0x04, 0x04, 0x04, 0x35, 0x35, 0x64,
-	                0x64, 0x64, 0x64, 0x00, 0x00, 0x00, 0x00, 0x00,
-	                0x56, 0x45, 0x56, 0x56, 0x56, 0x09, 0x09, 0x09 };
-	len=24;
-#elif INPUT == 2
-	uint8_t data_ptr[] = {0x01,0x01, 0x01, 0x01,0x01, 0x01, 0x01,0x09,0x09};
-	len = 9;
-#elif INPUT == 3
-	uint8_t data_ptr[] = {0x01,0x01, 0x01, 0x01};
-	len = 4;
-#endif
+	/*Call Test main function to call compression algorithm*/
+	test_main();
 
-	new_size = byte_compress(data_ptr,len);
-
-	//printf("new size:: %lu data:%d",new_size,data_ptr[0]);
-
-	byte_decompress(data_ptr,new_size);
 	return EXIT_SUCCESS;
 }
