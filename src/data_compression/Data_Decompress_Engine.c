@@ -1,12 +1,10 @@
 /*
- ============================================================================
- Name        : Data_Decompress_Engine.c
- Author      : Stephen
- Email		 : stephen5611@gmail.com
- Version     : 1.0
- Description : Hello World in C, Ansi-style
- ============================================================================
+ * Data_Decompress_Engine.c
+ *
+ *  
+ *      Author: Stephen
  */
+
 
 #include "Common.h"
 #include "Data_Compress_Interface.h"
@@ -16,12 +14,17 @@
 /******************************************************************************
 Function Name	: byte_decompress
 
-Description		:
+Description		: this function is used to decompress the compressed data bytes
 
-Input			: data_ptr:
-                  data_size:
+Input			: data_ptr: pointer to a array
+				  data_size: size of the array
 
-Return			:
+Return			: Pointer to the dynamically allocated reconstructed array
+                  Data size of the reconstructed array
+
+Constraints     : The caller of this function is responsible to free the dynamically
+                  allocated reconstructed array
+
 ******************************************************************************/
 
 decomp_data_t* byte_decompress(uint8_t *data_ptr, size_t data_size)

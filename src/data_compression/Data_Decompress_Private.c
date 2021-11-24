@@ -1,7 +1,7 @@
 /*
  * Data_Decompress_Private.c
  *
- *  Created on: Nov 23, 2021
+ *  
  *      Author: Stephen
  */
 
@@ -16,12 +16,13 @@
 /******************************************************************************
 Function Name	: Data_Decompress_find_Decompress_Siz
 
-Description		:
+Description		: this function is used to find the data size for the reconstruction 
+                  of the array from the compressed arary
 
-Input			: data_ptr:
-                  compressed_data_size:
+Input			: data_ptr: pointer to a array
+                  compressed_data_size: size of the array
 
-Return			:
+Return			: Calvculated size of the decompressed array
 ******************************************************************************/
 
 size_t Data_Decompress_find_Decompress_Siz(uint8_t *data_ptr, size_t compressed_data_size)

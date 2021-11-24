@@ -1,52 +1,29 @@
 /*
  * Data_Compress_Private.c
  *
- *  Created on: Nov 23, 2021
+ *  
  *      Author: Stephen
  */
+
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stddef.h>
 #include "Data_Compress_Private.h"
 #include "Common.h"
 
-/******************************************************************************
-Function Name	: Data_Compress_Chk_Invalid_Scenarios
 
-Description		:
-
-Input			: data_ptr:
-                  data_size:
-
-
-Return			:
-******************************************************************************/
-
-Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_size)
-{
-	Error_Code_t error_code = ERR_NONE;
-
-	if(NULL == data_ptr)
-	{
-		error_code = ERR_NULL_POINTER;
-	}
-	else if(INVALID_DATA_SIZE  == data_size)
-	{
-		error_code = ERR_INVALID_DATA_SIZE;
-	}
-
-	return error_code;
-}
 
 /******************************************************************************
 Function Name	: Data_Compress_Cont_Repeated_Bytes
 
-Description		:
+Description		: this function returns the count of a byte if it is contiguously repeated
 
-Input			: data_ptr:
-                  data_size:
+Input			: data_ptr : pointer to a array
+				  data_size: size of the array
 
-Return			:
+Return			: 1 : If the byte is not repeated
+                  greater than 1 : If the byte is repeated
 ******************************************************************************/
 
 
@@ -91,13 +68,15 @@ uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
 /******************************************************************************
 Function Name	: Data_Compress_Modify_Array
 
-Description		:
+Description		: this function is used to set a byte as duplicate and store 
+                  its count in the next immediate location and readjust the array
 
-Input			: data_ptr:
-                  repeated_count:
-                  data_size:
+Input			: data_ptr: pointer to a array
+				  data_size: size of the array
+                  repeated_count: count of the repeated byte
+                  
 
-Return			:
+Return			: None
 ******************************************************************************/
 
 void Data_Compress_Modify_Array(uint8_t *data_ptr, size_t repeated_count,size_t data_size)

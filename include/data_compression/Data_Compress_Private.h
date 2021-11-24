@@ -1,7 +1,7 @@
 /*
  * Data_Compress_Private.h
  *
- *  Created on: Nov 23, 2021
+ *  
  *      Author: Stephen
  */
 
@@ -20,8 +20,6 @@
 #define MIN_DATA_SIZE             1 
 
 
-/*Negative case checks */
-Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_size);
 
 /* Return Number of continuous repeated Bytes*/
 uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size);

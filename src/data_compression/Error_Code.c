@@ -1,7 +1,7 @@
 /*
  * Error_Code.c
  *
- *  Created on: Nov 23, 2021
+ *  
  *      Author: Stephen
  */
 
@@ -13,11 +13,11 @@
 /******************************************************************************
 Function Name	: Print_Error_Message
 
-Description		:
+Description		: this function is used to print the error code on the console
 
-Input			: error_code:
+Input			: error_code
 
-Return			:
+Return			: None
 ******************************************************************************/
 
 void Print_Error_Message(Error_Code_t error_code)

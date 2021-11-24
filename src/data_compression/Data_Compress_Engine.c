@@ -29,7 +29,7 @@ size_t byte_compress(uint8_t *data_ptr, size_t data_size)
 	Error_Code_t error_code = ERR_NONE;
 
 	/*Handle error condition*/
-	error_code = Data_Compress_Chk_Invalid_Scenarios(data_ptr,data_size);
+	error_code = Invalid_Array_Chk(data_ptr,data_size);
 
 	/*if error is present return size = 0*/
 	if(ERR_NONE != error_code)
