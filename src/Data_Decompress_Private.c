@@ -12,8 +12,18 @@
 #include <stddef.h>
 
 
+/******************************************************************************
+Function Name	: Data_Decompress_find_Decompress_Siz
 
-size_t Data_Decompress_find_Uncompress_Siz(uint8_t *data_ptr, size_t compressed_data_size)
+Description		:
+
+Input			: data_ptr:
+                  compressed_data_size:
+
+Return			:
+******************************************************************************/
+
+size_t Data_Decompress_find_Decompress_Siz(uint8_t *data_ptr, size_t compressed_data_size)
 {
 	size_t index = 0;
 	size_t byte_count = 0;

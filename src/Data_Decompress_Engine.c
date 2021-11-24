@@ -12,6 +12,18 @@
 #include "Data_Compress_Interface.h"
 #include "Data_Decompress_Private.h"
 
+
+/******************************************************************************
+Function Name	: byte_decompress
+
+Description		:
+
+Input			: data_ptr:
+                  data_size:
+
+Return			:
+******************************************************************************/
+
 decomp_data_t* byte_decompress(uint8_t *data_ptr, size_t data_size)
 {
 	size_t index = 0;
@@ -19,7 +31,7 @@ decomp_data_t* byte_decompress(uint8_t *data_ptr, size_t data_size)
 	static decomp_data_t decomp_data = {NULL,0};
 
 	/*find the number of bytes to be allocated*/
-	decomp_data.size = Data_Decompress_find_Uncompress_Siz(data_ptr,data_size);
+	decomp_data.size = Data_Decompress_find_Decompress_Siz(data_ptr,data_size);
 
 
 	decomp_data.data_ptr = (uint8_t*)malloc(decomp_data.size * sizeof(uint8_t));

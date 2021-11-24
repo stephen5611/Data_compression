@@ -12,6 +12,6 @@
 #include <stdio.h>
 #include <stddef.h>
 
-size_t Data_Decompress_find_Uncompress_Siz(uint8_t *data_ptr, size_t compressed_data_size);
+size_t Data_Decompress_find_Decompress_Siz(uint8_t *data_ptr, size_t compressed_data_size);
 
 #endif /* DATA_DECOMPRESS_PRIVATE_H_ */

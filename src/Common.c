@@ -7,6 +7,16 @@
 
 #include "Common.h"
 
+/******************************************************************************
+Function Name	: Print_Array
+
+Description		:
+
+Input			: data_ptr :
+				  data_size:
+
+Return			:
+******************************************************************************/
 void Print_Array(uint8_t *data_ptr, size_t data_size)
 {
 	size_t index = 0;
@@ -29,6 +39,19 @@ void Print_Array(uint8_t *data_ptr, size_t data_size)
 
 	printf("\n");
 }
+
+/******************************************************************************
+Function Name	: Compare_Arrays
+
+Description		:
+
+Input			: array1:
+                  arr_size1:
+                  array2:
+                  arr_size2:
+
+Return			:
+******************************************************************************/
 
 uint8_t Compare_Arrays(uint8_t *array1,size_t arr_size1, uint8_t *array2,size_t arr_size2)
 {
@@ -78,6 +101,17 @@ uint8_t Compare_Arrays(uint8_t *array1,size_t arr_size1, uint8_t *array2,size_t 
 	return result;
 
 }
+
+/******************************************************************************
+Function Name	: Invalid_Array_Chk
+
+Description		:
+
+Input			: data_ptr :
+				  data_size:
+
+Return			:
+******************************************************************************/
 
 Error_Code_t Invalid_Array_Chk(uint8_t *data_ptr, size_t data_size)
 {

@@ -9,6 +9,17 @@
 #include <stddef.h>
 #include "Data_Compress_Private.h"
 
+/******************************************************************************
+Function Name	: Data_Compress_Chk_Invalid_Scenarios
+
+Description		:
+
+Input			: data_ptr:
+                  data_size:
+
+
+Return			:
+******************************************************************************/
 
 Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_size)
 {
@@ -26,11 +37,17 @@ Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_
 	return error_code;
 }
 
-/*check if the Address of Array is not NULL*/
+/******************************************************************************
+Function Name	: Data_Compress_Cont_Repeated_Bytes
 
-/*Check if the data size is not zero*/
+Description		:
 
-/*Check if the data size is 1 or 2*/
+Input			: data_ptr:
+                  data_size:
+
+Return			:
+******************************************************************************/
+
 
 uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
 {
@@ -70,12 +87,24 @@ uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
 }
 
 
+/******************************************************************************
+Function Name	: Data_Compress_Modify_Array
+
+Description		:
+
+Input			: data_ptr:
+                  repeated_count:
+                  data_size:
+
+Return			:
+******************************************************************************/
+
 void Data_Compress_Modify_Array(uint8_t *data_ptr, size_t repeated_count,size_t data_size)
 {
 	size_t index = 0;
 
 	/*Set the MSB of the byte to indicate duplicate entries*/
-	data_ptr[0] = data_ptr[1] | 0x80;
+	data_ptr[0] = data_ptr[0] | 0x80;
 
 	/*insert the count of the repeated bytes to the immediate next location*/
 	data_ptr[1] = repeated_count;

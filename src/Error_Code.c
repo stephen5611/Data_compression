@@ -10,6 +10,16 @@
 #include "Error_Code.h"
 
 
+/******************************************************************************
+Function Name	: Print_Error_Message
+
+Description		:
+
+Input			: error_code:
+
+Return			:
+******************************************************************************/
+
 void Print_Error_Message(Error_Code_t error_code)
 {
 	switch(error_code)
