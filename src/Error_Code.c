@@ -15,10 +15,10 @@ void Print_Error_Message(Error_Code_t error_code)
 	switch(error_code)
 	{
 		case ERR_NULL_POINTER:
-			printf("Error : NULL pointer");
+			printf("Error : NULL pointer\n");
 			break;
 		case ERR_INVALID_DATA_SIZE:
-			printf("Error : Data size is zero");
+			printf("Error : Data size is zero\n");
 			break;
 
 		default:

@@ -12,11 +12,17 @@
 #include <stdint.h>
 #include <stddef.h>
 
+#include "Common.h"
+
 typedef enum {
 	TEST_CASE_1_RANDOM_DATA = 0,
 	TEST_CASE_2_SAME_DATA_SEQ,
 	TEST_CASE_3_SAME_DATA,
-	TEST_CASE_4_SAME_DATA_COUNT_256,
+	TEST_CASE_4_SAME_DATA_COUNT_GREATER_255,
+	TEST_CASE_5_NULL_ARRAY,
+	TEST_CASE_6_ZER0_DATA_SIZE,
+	TEST_CASE_7_DATA_SIZE_1,
+	TEST_CASE_8_DATA_SIZE_2,
 	TEST_CASE_MAX
 }test_case_t;
 
@@ -28,5 +34,7 @@ typedef struct {
 
 
 void test_main(void);
+
+void Test_Compare_Result(uint8_t compare_result,uint8_t *test_case);
 
 #endif /* TEST_H_ */

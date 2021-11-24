@@ -10,6 +10,7 @@
 #include "Data_Compress_Private.h"
 #include "Common.h"
 
+
 /******************************************************************************
 Function Name	: byte_compress
 
@@ -23,7 +24,21 @@ size_t byte_compress(uint8_t *data_ptr, size_t data_size)
 {
 	uint8_t *data_ptr_ref = data_ptr;
 	uint8_t repeated_bytes = 0;
-	size_t remaining_data_size = data_size;
+	size_t remaining_data_size = 0;
+	Error_Code_t error_code = ERR_NONE;
+
+	//Handle error condition
+	error_code = Data_Compress_Chk_Invalid_Scenarios(data_ptr,data_size);
+
+	if(ERR_NONE != error_code)
+	{
+		data_size = 0;
+		remaining_data_size = data_size;
+	}
+	else
+	{
+		remaining_data_size = data_size;
+	}
 
 	while(remaining_data_size != 0)
 	{
@@ -43,9 +58,6 @@ size_t byte_compress(uint8_t *data_ptr, size_t data_size)
 		remaining_data_size = data_size - (data_ptr_ref - data_ptr);
 
 	}
-
-	printf("compressed data size: %lu\n",data_size);
-	Print_Modified_Array(data_ptr,data_size);
 
 	return data_size;
 }

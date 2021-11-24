@@ -10,9 +10,10 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "Error_Code.h"
 
 /*Negative case checks */
-
+Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_size);
 
 /*check if the Address of Array is not NULL*/
 

@@ -10,6 +10,27 @@
 #include "Data_Compress_Private.h"
 
 
+Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_size)
+{
+	Error_Code_t error_code = ERR_NONE;
+
+	if(NULL == data_ptr)
+	{
+		error_code = ERR_NULL_POINTER;
+	}
+	else if( 0 == data_size)
+	{
+		error_code = ERR_INVALID_DATA_SIZE;
+	}
+
+	return error_code;
+}
+
+/*check if the Address of Array is not NULL*/
+
+/*Check if the data size is not zero*/
+
+/*Check if the data size is 1 or 2*/
 
 uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size)
 {
