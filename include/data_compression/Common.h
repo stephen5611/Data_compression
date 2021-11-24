@@ -12,8 +12,11 @@
 #include <stddef.h>
 #include "Error_Code.h"
 
-#define EQUAL 0
-#define NOT_EQUAL 1
+#define EQUAL                     0
+#define NOT_EQUAL                 1
+#define INVALID_DATA_SIZE         0
+#define DUPLICATE_BYTE_MASK       0x80
+#define IMMEDIATE_NEXT_LOC        1
 
 void Print_Array(uint8_t *data_ptr, size_t data_size);
 

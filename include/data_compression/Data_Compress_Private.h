@@ -12,14 +12,16 @@
 #include <stddef.h>
 #include "Error_Code.h"
 
+
+#define INSERTED_COUNT_BYTE       1
+#define MINIMUM_BYTE_REPEAT       1
+#define BASE_ELEMENT              0
+#define MAX_REPEAT_BYTE_COUNT     255
+#define MIN_DATA_SIZE             1 
+
+
 /*Negative case checks */
 Error_Code_t Data_Compress_Chk_Invalid_Scenarios(uint8_t *data_ptr, size_t data_size);
-
-/*check if the Address of Array is not NULL*/
-
-/*Check if the data size is not zero*/
-
-/*Check if the data size is 1 or 2*/
 
 /* Return Number of continuous repeated Bytes*/
 uint8_t Data_Compress_Cont_Repeated_Bytes(uint8_t *data_ptr, size_t data_size);

@@ -47,10 +47,10 @@ decomp_data_t* byte_decompress(uint8_t *data_ptr, size_t data_size)
 
 	for(index = 0; index < data_size;index++)
 	{
-		if(0x80 == (data_ptr[index] & 0x80))
+		if(DUPLICATE_BYTE_DETECT == (data_ptr[index] & DUPLICATE_BYTE_MASK))
 		{
 			/*fill the data byte present in the current index*/
-			decomp_data.data_ptr[ref_index] = (data_ptr[index] & 0x7F);
+			decomp_data.data_ptr[ref_index] = (data_ptr[index] & EXTRACT_BYTE_MASK);
 
 			/*increment to the next index*/
 			ref_index = ref_index + 1;
@@ -58,7 +58,7 @@ decomp_data_t* byte_decompress(uint8_t *data_ptr, size_t data_size)
 			/*extract the duplicated byte count from the next immediate index and fill the bytes*/
 			while(0 != data_ptr[index + 1])
 			{
-				decomp_data.data_ptr[ref_index] = (data_ptr[index] & 0x7F);
+				decomp_data.data_ptr[ref_index] = (data_ptr[index] & EXTRACT_BYTE_MASK);
 
 				/*decrement the duplicate byte count*/
 				data_ptr[index + 1] = data_ptr[index + 1] - 1;

@@ -5,11 +5,12 @@
  *      Author: Stephen
  */
 
-#include "Data_Decompress_Private.h"
-
 #include <stdint.h>
 #include <stdio.h>
 #include <stddef.h>
+
+#include "Data_Decompress_Private.h"
+#include "Common.h"
 
 
 /******************************************************************************
@@ -30,13 +31,13 @@ size_t Data_Decompress_find_Decompress_Siz(uint8_t *data_ptr, size_t compressed_
 
 	for(index = 0;index < compressed_data_size;index++)
 	{
-		if(0x80 == (data_ptr[index] & 0x80))
+		if(DUPLICATE_BYTE_DETECT == (data_ptr[index] & DUPLICATE_BYTE_MASK))
 		{
 			/*increment the byte count. The count of the repeated byte
 			 * is provided in the next immediate byte. The "+ 1" is for the
 			 * byte that the current index is pointing at*/
 
-			byte_count = byte_count + data_ptr[index + 1] + 1;
+			byte_count = byte_count + data_ptr[index + IMMEDIATE_NEXT_LOC] + CURRENT_DATA_BYTE_COUNT;
 
 			/*increment the index since we have already processed the next byte for the count*/
 			index = index + 1;

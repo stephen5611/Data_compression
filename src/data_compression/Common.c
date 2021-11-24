@@ -121,7 +121,7 @@ Error_Code_t Invalid_Array_Chk(uint8_t *data_ptr, size_t data_size)
 	{
 		error_code = ERR_NULL_POINTER;
 	}
-	else if( 0 == data_size)
+	else if( INVALID_DATA_SIZE == data_size)
 	{
 		error_code = ERR_INVALID_DATA_SIZE;
 	}

@@ -51,7 +51,7 @@ size_t byte_compress(uint8_t *data_ptr, size_t data_size)
 
 		/*compress the repeated bytes only when the byte has repeated more than once:
 		 * for instance: [0x01,0x01,0x01] is valid for compression but [0x01,0x01] is not valid*/
-		if(1 < repeated_bytes)
+		if(MINIMUM_BYTE_REPEAT < repeated_bytes)
 		{
 			/*delete the repeated bytes and enable MSB of the repeated byte to indicate a repeated byte.
 			 *  This bit will be used for verifying duplication during decompression
@@ -62,7 +62,7 @@ size_t byte_compress(uint8_t *data_ptr, size_t data_size)
 			/*reduce the data size after deleting the repeated bytes. Also, since,
 			 * the repeated count is being inserted in the immediate next location,
 			 *  this also needs to be taken into account*/
-			data_size = data_size - (repeated_bytes - 1);
+			data_size = data_size - (repeated_bytes - INSERTED_COUNT_BYTE);
 		}
 		else
 		{
